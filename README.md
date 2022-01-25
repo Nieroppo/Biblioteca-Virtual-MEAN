@@ -4,6 +4,7 @@ in this project you can create an account, "upload" books, "take" books and "tak
 
 ## Requirements
 -MongoDB.
+-NodeJS.
 
 ## Installing the backend
 
