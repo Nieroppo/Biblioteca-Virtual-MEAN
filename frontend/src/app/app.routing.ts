@@ -13,7 +13,7 @@ import { MybooksComponent } from './books/mybooks/mybooks.component';
 
 
 const routes: Routes = [
-    {path: '', component: HomeComponent},
+    {path: '', component: HomeComponent, canActivate: [AuthGuard]},
     {path: 'catalog', component: CatalogComponent, canActivate: [AuthGuard]},
     {path: 'book/:id', component: BookComponent, canActivate : [AuthGuard]},
     {path: 'mybooks', component: MybooksComponent, canActivate: [AuthGuard]},
