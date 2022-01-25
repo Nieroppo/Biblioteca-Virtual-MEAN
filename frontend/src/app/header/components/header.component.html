@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <div class="container-fluid">
+      <a class="navbar-brand"  [routerLink]="['/']">Library</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link"  [routerLink]="['/catalog']" routerLinkActive="active" *ngIf="authUserService.isLogged() && headerService.visible" >Catalog </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/mybooks']" routerLinkActive="active" *ngIf="authUserService.isLogged() && headerService.visible">My Books</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/save-book']" routerLinkActive="active" *ngIf="authUserService.isLogged() && headerService.visible">Save a Book</a>
+          </li>
+                 
+        </ul>
+        <ul class="navbar-nav ml-auto" *ngIf="!authUserService.isLogged()" >             
+            <li class="nav-item">
+                <a type="button" class="btn btn-secondary navbutton" [routerLink]="['/user/create']" *ngIf="headerService.visible">Sign in</a>
+            </li>
+            <li class="nav-item">
+                <a type="button" class="btn btn-light navbutton" [routerLink]="['/login']" *ngIf="headerService.visible">Log in</a>
+            </li>                  
+        </ul>
+        <ul class="navbar-nav ml-auto" *ngIf="authUserService.isLogged()">            
+            
+            <li class="nav-item">
+                <a type="button" class="btn btn-light" (click)="authUserService.logout()" *ngIf="headerService.visible">Logout</a>
+            </li>
+                  
+        </ul>
+        
+      </div>
+    </div>
+    </div>
+  </nav>
+

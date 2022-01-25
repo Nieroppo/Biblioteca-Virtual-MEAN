@@ -1,0 +1,22 @@
+
+<div class="container form">
+    <form  #userForm = "ngForm" (ngSubmit)="onSubmit(userForm)" class="col-md-6 offset-md-3">
+        <h2>{{titleOfPage}}</h2>
+        <div class="mb-6">
+            <label for="name" class="form-label">Name</label>
+            <input type="name" class="form-control" type="text" name="name" #name="ngModel" [(ngModel)]="user.name" placeholder="Your name" required/>
+            
+          </div>
+        <div class="mb-6">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" type="email" name="email" #email="ngModel" [(ngModel)]="user.email" placeholder="example@example.com" required/>
+          
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]="user.password" placeholder="*******" required/>
+        </div>
+        
+        <input type="submit" class="btn btn-primary" type="submit" value="Create a new account" [disabled]="!userForm.form.valid"/>
+      </form>
+</div>

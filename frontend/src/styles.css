@@ -1,0 +1,79 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+    min-height: 100%;
+    position: relative;
+  }
+body{
+    background-color: rgb(250, 250, 250);
+    margin-bottom: 40px;
+}
+
+#content{
+    min-height:55em;    
+    height: auto;
+    width: 85%;   
+    margin: 0 auto;
+    display: block;
+    float: center;
+}
+.footer{
+    width:85%;
+    margin: 0 auto;    
+    padding-top: 0.5em;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    clear: both;
+}
+.container.form {
+    padding-top: 6em;
+}
+a.btn.btn-secondary.navbutton {
+    margin-right: 0.5rem;
+}
+
+.books{
+    list-style: none;
+    display: block;
+    float: left;
+    width: 20%;
+    text-align: center;
+    margin-top: 2em;
+    margin-left: 1em;
+    margin-right: 1em;
+    text-decoration: none;
+}
+.books img{
+    width: 70%;
+    border-radius: 0.5em;
+    box-shadow: 1px 5px 15px 5px rgba(0,0,0,0.23);
+    max-width: 13.5em;
+    max-height: 20.25em;
+    min-width: 13.5em;
+    min-height: 20.25em;
+}
+.books a{
+    text-decoration: none;
+}
+.book img{
+    border-radius: 0.5em;
+    box-shadow: 1px 5px 15px 5px rgba(0,0,0,0.23);
+    max-width: 17.5em;
+    max-height: 24.25em;
+    min-width: 17.5em;
+    min-height: 24.25em;
+    float: left;
+  
+}
+.book.info{
+    float: left;
+    width: 49%;
+
+}
+.book.row.justify-content-center {
+    padding-top: 6em;
+}
+.titlePage{
+    padding-top: 1em;
+    padding-left: 3em;
+}

@@ -1,0 +1,50 @@
+<div class="titlePage"> <h3>{{titleOfPage}}</h3></div>
+<div class="container">
+    
+    <form #bookForm = "ngForm" (ngSubmit)="onSubmit(bookForm)"  class="col-md-6 offset-md-3" >
+       
+        <div class="mb-6">
+            <label for ="title" class="form-label">Title</label>            
+            <div class= "control">
+                <input class="form-control" type="text" name="title" #title="ngModel" [(ngModel)]="book.title" placeholder="Title of the book" required/>
+            </div>    
+        </div>
+        <div class="mb-6">
+            <label for ="author" class="form-label">Author</label>
+            
+            <div class= "control">
+                <input class="form-control" type="text" name="author" #author="ngModel" [(ngModel)]="book.author" placeholder="Author of the book" required/>
+            </div>
+        </div>
+        <div class="mb-6">
+            <label for ="publisher" class="form-label">Publisher</label>            
+            <div class= "control">
+                <input class="form-control" type="text" name="publisher" #publisher="ngModel" [(ngModel)]="book.publisher" placeholder="Publisher of the book" required/>
+            </div>
+        </div>
+        <div class="mb-6">
+            <label for ="category"class="form-label" > Category</label>            
+            <div class= "control">
+                <input class="form-control" type="text" name="category" #catergory="ngModel" [(ngModel)]="book.category" placeholder="Category of the book" required/>
+            </div>
+        </div>
+        <div class="mb-6">
+            <label for ="isbn" class="form-label">ISBN</label>
+            <span class ="form-error" *ngIf="isbn.touched && !isbn.valid">ISBN is not</span>
+            <div class= "control">
+                <input class="form-control" type="text" name="isbn" #isbn="ngModel" [(ngModel)]="book.isbn" placeholder="ISBN of the book" required/>
+            </div>
+        </div>
+        
+        <div class="mb-6">
+            
+            <label class="file-label">
+              <label for="formFile" class="form-label mb-6">Upload Cover</label>
+              <input class="form-control" type="file" name="cover" accept="image/png, image/jpeg"  (change)="fileChangeEvent($event)" >
+              
+            </label>
+          </div>
+        <input class="btn btn-primary" type="submit" value="Upload book" [disabled]="!bookForm.form.valid"/>
+    </form>
+</div>
+

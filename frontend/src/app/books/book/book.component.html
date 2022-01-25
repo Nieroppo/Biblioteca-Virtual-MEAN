@@ -1,0 +1,39 @@
+<div class="book row justify-content-center">
+    <div class="col-4 left">
+        <img src="{{ url + 'books/get-cover/' + book.cover }}" />
+    </div>
+    <div class="col-4 right">
+    <div class = info>
+        <table class="table">
+            <tbody>
+            <tr>
+                <td>Title</td>
+                <td>{{book.title}}</td>
+                
+            </tr>
+            <tr>
+                <td>Author</td>
+                <td>{{book.author}}</td>            
+            </tr>
+            <tr>
+                <td>ISBN</td>
+                <td>{{book.isbn}}</td>
+                
+            </tr>
+            <tr>
+                <td>Publisher</td>
+                <td>{{book.publisher}}</td>            
+            </tr>
+            <tr>
+                <td>Category</td>
+                <td>{{book.category}}</td>
+            </tr>  
+            </tbody>
+        </table>
+        
+        
+        <button class="btn btn-primary" type="button" (click)="takeBook(book._id)" *ngIf=!book.borrowed> Take it! </button>
+        <button class="btn btn-secondary" type="button" (click)="takeBack(book._id)" *ngIf=book.borrowed> Take back </button>
+    </div>    
+</div>
+</div>

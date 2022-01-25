@@ -1,0 +1,21 @@
+<div class="titlePage"><h3>My Books</h3></div>
+   
+    <ul>
+      <li class="books" *ngFor="let book of myBooks">
+        <a [routerLink]="['/book', book._id]">
+            <img src="{{ url + 'books/get-cover/' + book.cover }}" />
+             
+            <div class="card-content">
+                            
+                  <p class="title is-4">{{ book.title }}</p>
+                  <p class="subtitle is-6">{{ book.author }}</p>
+                
+              
+            </div>
+         
+        </a>
+      </li>
+    </ul>
+  
+  
+  
